@@ -25,7 +25,7 @@ export default function Home() {
       function replaceChar(char, index, array) {
         const position = alphabet.findIndex((element) => element === char);
         if (position >= 0) {
-          array[index] = alphabet[position + step];
+          array[index] = alphabet[position - step];
         } else {
           array[index] = char;
         }
@@ -38,7 +38,7 @@ export default function Home() {
       let newObj = {
         ...obj,
         decifrado: messageArray.join(""),
-        resumo_criptografico: returnCrypto(obj.decifrado),
+        resumo_criptografico: returnCrypto(messageArray.join("")),
       };
 
       setResponseObject(newObj);

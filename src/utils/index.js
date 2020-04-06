@@ -32,6 +32,8 @@ export const alphabet = [
 export const returnCrypto = msg => {
   return crypto
     .createHash("sha1")
-    .update(msg)
+    .update(msg, 'utf8')
     .digest("hex");
 };
+
+
